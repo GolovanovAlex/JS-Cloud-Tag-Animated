@@ -114,7 +114,7 @@ class TagsCloud {
     const a = Math.atan2(deltaX, deltaY) - Math.PI / 2;
     const axis = [Math.sin(a), Math.cos(a), 0];
     const delta = Math.sqrt(deltaX ** 2 + deltaY ** 2);
-    const speed = delta / Math.max(window.innerHeight, window.innerWidth) / 10;
+    const speed = delta / Math.max(window.innerHeight, window.innerWidth) / 20;
 
     this.#rotationAxis = axis;
     this.#rotationSpeed = speed;
@@ -143,19 +143,6 @@ function main() {
     const cloud = new TagsCloud(root);
 
     cloud.start();
-  }
-
-  {
-    const cursor = document.getElementById('cursor');
-    const isActivated = false;
-
-    document.addEventListener('mousemove', (e) => {
-      if (!isActivated) {
-        cursor.classList.add('-activated');
-      }
-
-      cursor.style.transform = `translateX(${e.clientX}px) translateY(${e.clientY}px)`;
-    });
   }
 }
 

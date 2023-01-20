@@ -1,13 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
   margin: 0;
@@ -15,30 +6,10 @@
   box-sizing: border-box;
 }
 
-html {
-  font-family: 'IBM Plex Mono', monospace;
-}
-
 body {
   background: #f0fff0;
   color: #00416a;
-  cursor: none;
-}
-
-#cursor {
-  position: fixed;
-  top: -16px;
-  left: -16px;
-  z-index: 1;
-  height: 32px;
-  width: 32px;
-  border-radius: 50%;
-  background: #e0e1dd;
-  opacity: 0;
-}
-
-#cursor.-activated {
-  animation: fadeIn 1s ease-out forwards;
+  font-family: 'Poppins', sans-serif;
 }
 
 .tags {
@@ -49,13 +20,14 @@ body {
   width: 60vmin;
   list-style: none;
   opacity: 0;
+  user-select: none;
 }
 
 .tags.-loaded {
   animation: fadeIn 1s ease-out forwards;
 }
 
-.tags > .tag {
+.tags .tag {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -64,7 +36,15 @@ body {
   transition: transform 0.5s linear, opacity 0.5s linear;
 }
 
-.tags > .tag > .box {
+.tag > .box {
   display: inline-block;
   transform: translateX(-50%) translateY(-50%);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

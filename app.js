@@ -114,6 +114,8 @@ class TagsCloud {
     const a = Math.atan2(deltaX, deltaY) - Math.PI / 2;
     const axis = [Math.sin(a), Math.cos(a), 0];
     const delta = Math.sqrt(deltaX ** 2 + deltaY ** 2);
+
+    // ---- ---- SPEED ---- ---- //
     const speed = delta / Math.max(window.innerHeight, window.innerWidth) / 20;
 
     this.#rotationAxis = axis;
